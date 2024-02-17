@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { MuiNavbar } from './Components/NavBar/MuiNavbar';
+import { Home } from './Page/Home/Home';
+import { AiSolutions } from './Page/AiSolutions/AiSolutions';
+import { AboutUs } from './Page/AboutUs/AboutUs';
+import { Team } from './Page/Team/Team';
+import { Footer } from './Components/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MuiNavbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='Home' element={<Home />} />
+        <Route path='AI Solutions' element={<AiSolutions />} />
+        <Route path='About Us' element={<AboutUs />} />
+        <Route path='Team' element={<Team />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
